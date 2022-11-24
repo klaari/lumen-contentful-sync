@@ -6,12 +6,12 @@
         <directory suffix="Test.php">tests</directory>
     </testsuite>
 
-    <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+    <coverage processUncoveredFiles="true">
+        <include>
             <directory suffix=".php">src</directory>
-        </whitelist>
-    </filter>
-    <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml" logIncompleteSkipped="false"/>
-    </logging>
+        </include>
+        <report>
+            <clover outputFile="build/logs/clover.xml" />
+        </report>
+    </coverage>
 </phpunit>

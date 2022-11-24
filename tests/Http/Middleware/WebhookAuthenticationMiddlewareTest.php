@@ -5,6 +5,7 @@ namespace Digia\Lumen\ContentfulSync\Tests\Http\Middleware;
 use Digia\Lumen\ContentfulSync\Http\Middleware\WebhookAuthenticationMiddleware;
 use Digia\Lumen\ContentfulSync\Tests\TestCase;
 use Illuminate\Http\Request;
+use InvalidArgumentException;
 
 /**
  * Class WebhookAuthenticationTest
@@ -31,9 +32,6 @@ class WebhookAuthenticationMiddlewareTest extends TestCase
         }));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testMiddlewareFails()
     {
         $request = new Request();
@@ -42,6 +40,9 @@ class WebhookAuthenticationMiddlewareTest extends TestCase
         ]);
 
         $middleware = new WebhookAuthenticationMiddleware('foo', 'bar');
+
+        $this->expectException(InvalidArgumentException::class);
+
         $middleware->handle($request, function () {
 
         });

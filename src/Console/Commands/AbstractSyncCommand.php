@@ -32,7 +32,7 @@ abstract class AbstractSyncCommand extends Command implements CommandInterface
     protected $contentfulSyncService;
 
     /**
-     * @var array
+     * @var array<string>
      */
     protected $contentTypes;
 
@@ -74,7 +74,7 @@ abstract class AbstractSyncCommand extends Command implements CommandInterface
     /**
      * AbstractSyncCommand constructor.
      *
-     * @param array                         $contentTypes
+     * @param array<string>                 $contentTypes
      * @param ContentfulServiceContract     $contentfulService
      * @param ContentfulSyncServiceContract $contentfulSyncService
      */

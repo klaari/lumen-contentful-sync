@@ -14,24 +14,24 @@ interface ContentfulSyncServiceContract
      * @param string $entryJson
      * @param bool   $ignoreExisting
      */
-    public function handleEntryPublished(string $contentType, string $entryJson, bool $ignoreExisting);
+    public function handleEntryPublished(string $contentType, string $entryJson, bool $ignoreExisting): void;
 
     /**
      * @param string $contentType
      * @param string $entryId
      */
-    public function handleEntryDeleted(string $contentType, string $entryId);
+    public function handleEntryDeleted(string $contentType, string $entryId): void;
 
     /**
      * @param string $assetJson
      * @param bool   $ignoreExisting
      */
-    public function handleAssetPublished(string $assetJson, bool $ignoreExisting);
+    public function handleAssetPublished(string $assetJson, bool $ignoreExisting): void;
 
     /**
      * @param string $assetId
      */
-    public function handleAssetDeleted(string $assetId);
+    public function handleAssetDeleted(string $assetId): void;
 
     /**
      * @param string $contentType

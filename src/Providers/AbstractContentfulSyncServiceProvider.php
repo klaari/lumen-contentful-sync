@@ -21,7 +21,7 @@ abstract class AbstractContentfulSyncServiceProvider extends ServiceProvider imp
     /**
      * @param Application $app
      */
-    abstract protected function registerContentfulSyncServiceBindings(Application $app);
+    abstract protected function registerContentfulSyncServiceBindings(Application $app): void;
 
     /**
      * @inheritDoc

@@ -24,22 +24,22 @@ abstract class AbstractContentfulSyncService implements ContentfulSyncServiceCon
     /**
      * @inheritdoc
      */
-    abstract public function handleEntryPublished(string $contentType, string $entryJson, bool $ignoreExisting);
+    abstract public function handleEntryPublished(string $contentType, string $entryJson, bool $ignoreExisting): void;
 
     /**
      * @inheritdoc
      */
-    abstract public function handleEntryDeleted(string $contentType, string $entryId);
+    abstract public function handleEntryDeleted(string $contentType, string $entryId): void;
 
     /**
      * @inheritdoc
      */
-    abstract public function handleAssetPublished(string $assetJson, bool $ignoreExisting);
+    abstract public function handleAssetPublished(string $assetJson, bool $ignoreExisting): void;
 
     /**
      * @inheritdoc
      */
-    abstract public function handleAssetDeleted(string $assetId);
+    abstract public function handleAssetDeleted(string $assetId): void;
 
     /**
      * ContentfulSyncService constructor.

@@ -3,6 +3,7 @@
 namespace Digia\Lumen\ContentfulSync\Tests\Http\Controllers;
 
 use Digia\Lumen\ContentfulSync\Contracts\ContentfulSyncServiceContract;
+use Digia\Lumen\ContentfulSync\Exceptions\ContentfulSyncException;
 use Digia\Lumen\ContentfulSync\Http\Controllers\ContentfulSyncController;
 use Digia\Lumen\ContentfulSync\Tests\TestCase;
 use Illuminate\Http\Request;
@@ -14,16 +15,15 @@ use Nord\Lumen\Contentful\ContentfulServiceContract;
  */
 class ContentfulSyncControllerTest extends TestCase
 {
-
-    /**
-     * @expectedException \Digia\Lumen\ContentfulSync\Exceptions\ContentfulSyncException
-     */
     public function testUnknownTopic()
     {
         $request = new Request();
         $request->headers->set('X-Contentful-Topic', 'foo');
 
         $controller = new ContentfulSyncController($this->getMockedService(), $this->getMockedSyncService());
+
+        $this->expectException(ContentfulSyncException::class);
+
         $controller->handleIncomingWebhook($request);
     }
 

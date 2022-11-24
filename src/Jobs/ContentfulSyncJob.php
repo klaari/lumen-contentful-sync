@@ -20,5 +20,5 @@ abstract class ContentfulSyncJob implements ShouldQueue
     /**
      * Performs the actual work.
      */
-    abstract public function handle();
+    abstract public function handle(): void;
 }

@@ -158,6 +158,12 @@ class ContentfulSyncController extends Controller
      */
     private function getContentfulTopic(Request $request): string
     {
-        return $request->header('X-Contentful-Topic', '');
+        $topic = $request->header('X-Contentful-Topic', '');
+
+        if (is_array($topic)) {
+            return join(',', $topic);
+        }
+
+        return (string) $topic;
     }
 }
