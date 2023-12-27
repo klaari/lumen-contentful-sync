@@ -23,7 +23,7 @@
     "require": {
         "php": ">=7.1",
         "jalle19/laravel-lost-interfaces": "dev-master as 1.2",
-        "laravel/lumen-framework": "^5.4|^6.0|^7.0|^8.0|^9.0",
+        "laravel/lumen-framework": "^5.4|^6.0|^7.0|^8.0|^9.0|^10.0",
         "nordsoftware/lumen-contentful": "dev-master as 4.2",
         "nordsoftware/lumen-newrelic": "^4.1",
         "digiaonline/json-helpers": "^1.0"
