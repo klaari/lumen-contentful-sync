@@ -18,14 +18,18 @@
         {
             "type": "vcs",
             "url": "https:https://github.com/klaari/lumen-contentful.git"
-         }
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/klaari/lumen-newrelic.git"
+        }
     ],
     "require": {
         "php": ">=7.1",
         "jalle19/laravel-lost-interfaces": "dev-master as 1.2",
         "laravel/lumen-framework": "^5.4|^6.0|^7.0|^8.0|^9.0|^10.0",
         "nordsoftware/lumen-contentful": "dev-master as 4.2",
-        "nordsoftware/lumen-newrelic": "^4.1",
+        "nordsoftware/lumen-newrelic": "dev-main#9343f1f86bef4d859cdb73f2a8c881fa8560589f",
         "digiaonline/json-helpers": "^1.0"
     },
     "require-dev": {
